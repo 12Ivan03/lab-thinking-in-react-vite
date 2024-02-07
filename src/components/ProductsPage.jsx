@@ -6,11 +6,13 @@ import jsonData from '../data.json';
 
 function ProductPage () {
 
+    const [infoData, setInfoData] = useState(jsonData)
+
     return(
         <div>
             <h1>IronStore</h1>
             <SearchBar />
-            <ProductTable jsonData={jsonData} />
+            <ProductTable infoData={infoData} />
         </div>
     );
 }
