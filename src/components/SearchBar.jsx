@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function SearchBar ({ handleOnChangePass }) {
-    const [ value, setValue ] = useState('')
+    const [ value, setValue ] = useState('');
 
     const handleValue = e => {
         setValue(e.target.value)

@@ -16,13 +16,14 @@ function ProductPage () {
         if(value.length === 0 ){
             newInfoData = jsonData;
         } else {
-            newInfoData = infoData.filter((data) => {
+            newInfoData = jsonData.filter((data) => {
                 return data.name.includes(value)
             })
         }
 
         setInfoData(newInfoData)
     }
+
 
     return(
         <div>
