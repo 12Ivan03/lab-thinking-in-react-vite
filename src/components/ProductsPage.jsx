@@ -8,10 +8,26 @@ function ProductPage () {
 
     const [infoData, setInfoData] = useState(jsonData)
 
+    // update the infoData
+    const handleOnChange = (value) => {
+
+        let newInfoData
+        
+        if(value.length === 0 ){
+            newInfoData = jsonData;
+        } else {
+            newInfoData = infoData.filter((data) => {
+                return data.name.includes(value)
+            })
+        }
+
+        setInfoData(newInfoData)
+    }
+
     return(
         <div>
             <h1>IronStore</h1>
-            <SearchBar />
+            <SearchBar handleOnChangePass={handleOnChange} />
             <ProductTable infoData={infoData} />
         </div>
     );
