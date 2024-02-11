@@ -17,18 +17,35 @@ function ProductPage () {
             newInfoData = jsonData;
         } else {
             newInfoData = jsonData.filter((data) => {
-                return data.name.includes(value);
+                return data.name.toLocaleLowerCase().includes(value.toLocaleLowerCase());
             })
         }
 
         setInfoData(newInfoData);
     }
 
+    const filterOnCheck = (e) => {
+
+        let filterOnCheck;
+
+        console.log('the type of th', typeof(ev));
+
+        if(e === false){
+            filterOnCheck = jsonData;
+        } else {
+            filterOnCheck = jsonData.filter((x) => {
+                return x.inStock === true;
+            })
+        }
+
+        setInfoData(filterOnCheck);
+    }
+
 
     return(
         <div>
             <h1>IronStore</h1>
-            <SearchBar handleOnChangePass={handleOnChange} />
+            <SearchBar handleOnChangePass={handleOnChange} filterOnCheckPass={filterOnCheck} />
             <ProductTable infoData={infoData} />
         </div>
     );
