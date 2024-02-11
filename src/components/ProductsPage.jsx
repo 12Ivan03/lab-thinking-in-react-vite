@@ -6,7 +6,7 @@ import jsonData from '../data.json';
 
 function ProductPage () {
 
-    const [infoData, setInfoData] = useState(jsonData)
+    const [infoData, setInfoData] = useState(jsonData);
 
     // update the infoData
     const handleOnChange = (value) => {
@@ -17,11 +17,11 @@ function ProductPage () {
             newInfoData = jsonData;
         } else {
             newInfoData = jsonData.filter((data) => {
-                return data.name.includes(value)
+                return data.name.includes(value);
             })
         }
 
-        setInfoData(newInfoData)
+        setInfoData(newInfoData);
     }
 
 
